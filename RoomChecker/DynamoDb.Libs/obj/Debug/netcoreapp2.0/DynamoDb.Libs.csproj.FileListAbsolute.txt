@@ -1,0 +1,9 @@
+/Users/mertdemirok/Projects/RoomChecker/DynamoDb.Libs/bin/Debug/netcoreapp2.0/DynamoDb.Libs.deps.json
+/Users/mertdemirok/Projects/RoomChecker/DynamoDb.Libs/bin/Debug/netcoreapp2.0/DynamoDb.Libs.dll
+/Users/mertdemirok/Projects/RoomChecker/DynamoDb.Libs/bin/Debug/netcoreapp2.0/DynamoDb.Libs.pdb
+/Users/mertdemirok/Projects/RoomChecker/DynamoDb.Libs/obj/Debug/netcoreapp2.0/DynamoDb.Libs.csproj.CoreCompileInputs.cache
+/Users/mertdemirok/Projects/RoomChecker/DynamoDb.Libs/obj/Debug/netcoreapp2.0/DynamoDb.Libs.AssemblyInfoInputs.cache
+/Users/mertdemirok/Projects/RoomChecker/DynamoDb.Libs/obj/Debug/netcoreapp2.0/DynamoDb.Libs.AssemblyInfo.cs
+/Users/mertdemirok/Projects/RoomChecker/DynamoDb.Libs/obj/Debug/netcoreapp2.0/DynamoDb.Libs.dll
+/Users/mertdemirok/Projects/RoomChecker/DynamoDb.Libs/obj/Debug/netcoreapp2.0/DynamoDb.Libs.pdb
+/Users/mertdemirok/Projects/RoomChecker/DynamoDb.Libs/obj/Debug/netcoreapp2.0/DynamoDb.Libs.csprojResolveAssemblyReference.cache

@@ -1,0 +1,11 @@
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/bin/Debug/netcoreapp2.0/RoomCheckerApi.deps.json
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/bin/Debug/netcoreapp2.0/RoomCheckerApi.runtimeconfig.json
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/bin/Debug/netcoreapp2.0/RoomCheckerApi.runtimeconfig.dev.json
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/bin/Debug/netcoreapp2.0/RoomCheckerApi.dll
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/bin/Debug/netcoreapp2.0/RoomCheckerApi.pdb
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/obj/Debug/netcoreapp2.0/RoomCheckerApi.csprojResolveAssemblyReference.cache
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/obj/Debug/netcoreapp2.0/RoomCheckerApi.csproj.CoreCompileInputs.cache
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/obj/Debug/netcoreapp2.0/RoomCheckerApi.AssemblyInfoInputs.cache
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/obj/Debug/netcoreapp2.0/RoomCheckerApi.AssemblyInfo.cs
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/obj/Debug/netcoreapp2.0/RoomCheckerApi.dll
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/obj/Debug/netcoreapp2.0/RoomCheckerApi.pdb

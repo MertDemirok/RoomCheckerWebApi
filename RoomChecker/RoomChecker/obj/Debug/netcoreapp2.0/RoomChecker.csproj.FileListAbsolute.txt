@@ -1,0 +1,13 @@
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/bin/Debug/netcoreapp2.0/RoomChecker.deps.json
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/bin/Debug/netcoreapp2.0/RoomChecker.runtimeconfig.json
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/bin/Debug/netcoreapp2.0/RoomChecker.runtimeconfig.dev.json
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/bin/Debug/netcoreapp2.0/RoomChecker.dll
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/bin/Debug/netcoreapp2.0/RoomChecker.pdb
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/bin/Debug/netcoreapp2.0/DynamoDb.Libs.dll
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/bin/Debug/netcoreapp2.0/DynamoDb.Libs.pdb
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/obj/Debug/netcoreapp2.0/RoomChecker.csprojResolveAssemblyReference.cache
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/obj/Debug/netcoreapp2.0/RoomChecker.csproj.CoreCompileInputs.cache
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/obj/Debug/netcoreapp2.0/RoomChecker.AssemblyInfoInputs.cache
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/obj/Debug/netcoreapp2.0/RoomChecker.AssemblyInfo.cs
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/obj/Debug/netcoreapp2.0/RoomChecker.dll
+/Users/mertdemirok/Projects/RoomChecker/RoomChecker/obj/Debug/netcoreapp2.0/RoomChecker.pdb
