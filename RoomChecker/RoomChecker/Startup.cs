@@ -31,17 +31,19 @@ namespace RoomChecker
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            //Memory DB
             services.AddDbContext<RoomContext>(opt => opt.UseInMemoryDatabase("RoomCheckerDb"));
+            //fOR AWS DynamoDB
+            Environment.SetEnvironmentVariable("AWS_ACCESS_KEY_ID", Configuration["AWS:AccessKey"]);
+            Environment.SetEnvironmentVariable("AWS_SECRET_ACCESS_KEY", Configuration["AWS:SecretKey"]);
+            Environment.SetEnvironmentVariable("AWS_REGION", Configuration["AWS:Region"]);
             services.AddMvc();
 
             services.AddDefaultAWSOptions(Configuration.GetAWSOptions());
             services.AddAWSService<IAmazonDynamoDB>();
             services.AddSingleton<ICreateTable, CreateTable>();
 
-            Environment.SetEnvironmentVariable("AWS_ACCESS_KEY_ID", Configuration["AWS:AccessKey"]);
-            Environment.SetEnvironmentVariable("AWS_SECRET_ACCESS_KEY", Configuration["AWS:SecretKey"]);
-            Environment.SetEnvironmentVariable("AWS_REGION", Configuration["AWS:Region"]);
+           
 
 
             services.AddSwaggerGen(c =>
@@ -53,7 +55,7 @@ namespace RoomChecker
                     Description = "Otel odası yönetimi web servisi",
                     Contact = new Contact
                     {
-                        Name = "Mert Demirok",
+                        Name = "Mert Demirok && Tunc Tezdiyar",
                         Email = "",
                         Url = "http://www.mertdemirok.com"
                     },
@@ -74,8 +76,8 @@ namespace RoomChecker
             if (env.IsDevelopment()){
                 app.UseDeveloperExceptionPage();
                 }
- 
-           // app.UseStaticFiles();
+
+            // app.UseStaticFiles();
 
             app.UseMvc();
 

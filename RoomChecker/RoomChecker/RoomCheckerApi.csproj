@@ -27,4 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DynamoDb.Libs\DynamoDb.Libs.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Controllers\DynamoDbController.cs" />
+  </ItemGroup>
 </Project>

@@ -1,72 +1,120 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
+using Amazon.Runtime;
 using Microsoft.AspNetCore.Mvc;
+
 using RoomChecker.Models;
 using RoomCheckerApi.Models;
 
 namespace RoomChecker.Controllers
 {
 
-    [Route("Room/restapi/[controller]")]
+    [Route("room-managment/managed-room/[action][controller]")]
     public class RoomsController : Controller
     {
-
         private readonly RoomContext _context;
-        /*private readonly DynamoDbController dynamoDb;*/
-
+        private static AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+       
 
         public RoomsController(RoomContext context)
         {
+
             _context = context;
 
-            //Generalcs yazmalısın oradan yonetılmelı db cache log ıslerı
-           /* dynamoDb.CreateDynamoDbTable();*/
-
-            if (_context.Room.Count() == 0)
-            {
-                _context.Room.Add(new Rooms { Id = 19201, RoomNumber = 1 ,  BaseMaterial = new BaseMaterials { Id = 100, Name = "Yatak Örtüsü", Status = 1 },
-                                                                          HouseKeeper = new HouseKeepers{Id=1,CheckDate=DateTime.Now,Name="Ayşe Kek",Point="10"} });
-                _context.Room.Add(new Rooms { Id = 23942, RoomNumber = 2 ,BaseMaterial = new BaseMaterials { Id = 101, Name = "Banyo", Status = 0 } });
-                _context.Room.Add(new Rooms { Id = 30021, RoomNumber = 3, BaseMaterial = new BaseMaterials { Id = 102, Name = "Klozet", Status = 0 } });
-                _context.Room.Add(new Rooms { Id = 30492, RoomNumber = 4 ,BaseMaterial = new BaseMaterials { Id = 103, Name = "Zemin", Status = 1 } });
-
-                _context.SaveChanges();
-            }
 
         }
 
         [HttpGet]
         public IEnumerable<Rooms> Get()
         {
+
+
+                DynamoDBContext aws_Context = new DynamoDBContext(client);
+
+          
+
+            //geti düzelt !!! all room
             _context.HouseKeeper.ToList();
             _context.BaseMaterial.ToList();
 
             return _context.Room.ToList();
         }
 
-        [HttpGet("{id}", Name="GetRoom")]
-        public IActionResult Get(int id)
+        [HttpGet("{id}", Name = "GetRoom")]
+        public async System.Threading.Tasks.Task<IActionResult> GetAsync(int id)
         {
             var product = _context.Room.FirstOrDefault(t => t.Id == id);
-            if (product == null)
+            try
             {
-                return NotFound();
+                DynamoDBContext aws_Context = new DynamoDBContext(client);
+                var roomRetrieved = await aws_Context.LoadAsync<Rooms>(id);
+
+
+                if (roomRetrieved == null)
+                {
+                    //Responseları Methoda cevir
+                    return new ObjectResult(new
+                    {
+
+                        ID = id,
+                        Title = "Data not find!",
+                        ErrorCode = 1001
+
+                    });
+                }
+
+                return new ObjectResult(roomRetrieved);
             }
-            return new ObjectResult(product);
+            catch (AmazonDynamoDBException e) { Console.WriteLine(e.Message); }
+            catch (AmazonServiceException e) { Console.WriteLine(e.Message); }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+
+            return null;
         }
 
         [HttpPost]
         public IActionResult Post([FromBody]Rooms newRoom)
         {
-            if(newRoom == null){
+
+            DynamoDBContext aws_Context = new DynamoDBContext(client);
+            if (newRoom == null)
+            {
                 return BadRequest();
             }
-            _context.Room.Add(newRoom);
-            _context.SaveChanges();
+            else
+            {
+                try
+                {
 
-            return CreatedAtRoute("GetRoom",new {id=newRoom.Id},newRoom);  
+                    //If user is Admin HouseKeeper,Status is must empty 
+                    Rooms room = new Rooms
+                    {
+                        Id = newRoom.Id,
+                        RoomNumber = newRoom.RoomNumber,
+                        BaseMaterial = newRoom.BaseMaterial,
+                        CheckDate = DateTime.Now,
+                        Status = newRoom.Status,
+                        HouseKeeper = newRoom.HouseKeeper,
+                        Note = newRoom.Note,
+                        creator = newRoom.creator
+                    };
+
+
+                    aws_Context.SaveAsync(room);
+                    _context.Room.Add(newRoom);
+                    _context.SaveChanges();
+                }
+
+                catch (AmazonDynamoDBException e) { Console.WriteLine(e.Message); }
+                catch (AmazonServiceException e) { Console.WriteLine(e.Message); }
+                catch (Exception e) { Console.WriteLine(e.Message); }
+            }
+
+
+            return CreatedAtRoute("GetRoom", new { id = newRoom.Id }, newRoom);
         }
 
         [HttpPut("{id}")]
@@ -76,9 +124,27 @@ namespace RoomChecker.Controllers
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
-            //TODO:Yazılacak
+            DynamoDBContext aws_Context = new DynamoDBContext(client);
+
+            try
+            {
+                aws_Context.DeleteAsync<Rooms>(id);
+               
+                return new ObjectResult(new
+                {
+
+                    ID = id,
+                    Title = "Data is Deleted!",
+                    ErrorCode = 0
+
+                });
+            }
+            catch (AmazonDynamoDBException e) { Console.WriteLine(e.Message); }
+            catch (AmazonServiceException e) { Console.WriteLine(e.Message); }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+            return null;
         }
     }
 }

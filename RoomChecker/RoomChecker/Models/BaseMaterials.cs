@@ -1,10 +1,16 @@
 ﻿using System;
+using Amazon.DynamoDBv2.DataModel;
+
 namespace RoomCheckerApi.Models
 {
+    [DynamoDBTable("BaseMaterials")]
     public class BaseMaterials
     {
-            public long Id { get; set; }
+            [DynamoDBHashKey] 
+            public Int32 Id { get; set; }
+            [DynamoDBProperty]
             public string Name { get; set; }
+            [DynamoDBProperty]
             public Int16 Status { get; set; }
     }
 }

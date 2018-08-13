@@ -4095,11 +4095,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mertdemirok/Projects/RoomChecker/DynamoDb.Libs/DynamoDb.Libs.csproj",
+      "projectUniqueName": "/Users/mertdemirok/Projects/RoomCheckerWebApi/RoomChecker/DynamoDb.Libs/DynamoDb.Libs.csproj",
       "projectName": "DynamoDb.Libs",
-      "projectPath": "/Users/mertdemirok/Projects/RoomChecker/DynamoDb.Libs/DynamoDb.Libs.csproj",
+      "projectPath": "/Users/mertdemirok/Projects/RoomCheckerWebApi/RoomChecker/DynamoDb.Libs/DynamoDb.Libs.csproj",
       "packagesPath": "/Users/mertdemirok/.nuget/packages/",
-      "outputPath": "/Users/mertdemirok/Projects/RoomChecker/DynamoDb.Libs/obj",
+      "outputPath": "/Users/mertdemirok/Projects/RoomCheckerWebApi/RoomChecker/DynamoDb.Libs/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
