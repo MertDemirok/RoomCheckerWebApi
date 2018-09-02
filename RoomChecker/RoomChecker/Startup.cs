@@ -33,7 +33,7 @@ namespace RoomChecker
         {
             //Memory DB
             services.AddDbContext<RoomContext>(opt => opt.UseInMemoryDatabase("RoomCheckerDb"));
-            //fOR AWS DynamoDB
+            //FOR AWS DynamoDB
             Environment.SetEnvironmentVariable("AWS_ACCESS_KEY_ID", Configuration["AWS:AccessKey"]);
             Environment.SetEnvironmentVariable("AWS_SECRET_ACCESS_KEY", Configuration["AWS:SecretKey"]);
             Environment.SetEnvironmentVariable("AWS_REGION", Configuration["AWS:Region"]);
@@ -45,9 +45,9 @@ namespace RoomChecker
 
            
 
-
             services.AddSwaggerGen(c =>
             {
+                
                 c.SwaggerDoc("v1", new Info
                 {
                     Title = "Room Checker API",
@@ -75,16 +75,18 @@ namespace RoomChecker
 
             if (env.IsDevelopment()){
                 app.UseDeveloperExceptionPage();
+
                 }
 
-            // app.UseStaticFiles();
-
             app.UseMvc();
+                
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
+                
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Room Checker API v1.0");
+                c.InjectStylesheet("/swagger-ui/custom.css");
             });
         }
     }

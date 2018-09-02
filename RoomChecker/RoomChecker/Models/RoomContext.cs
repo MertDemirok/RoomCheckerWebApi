@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using RoomCheckerApi.Models;
+using RoomChecker.Models;
 
 namespace RoomChecker.Models
 {

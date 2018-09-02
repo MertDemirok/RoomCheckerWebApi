@@ -1,6 +1,6 @@
 ﻿using System;
 using Amazon.DynamoDBv2.DataModel;
-using RoomCheckerApi.Models;
+using RoomChecker.Models;
 
 namespace RoomChecker.Models
 {

@@ -1,10 +1,11 @@
 ﻿using System;
+using Amazon.DynamoDBv2;
+
 namespace DynamoDb.Libs.DynamoDb
 {
-    public class IAwsAccessHelper
-    {
-        public IAwsAccessHelper()
-        {
-        }
+
+    public interface IAwsAccessHelper
+    { 
+        AmazonDynamoDBClient AwsConnecttion();
     }
 }

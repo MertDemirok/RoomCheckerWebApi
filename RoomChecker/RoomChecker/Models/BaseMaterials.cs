@@ -1,7 +1,7 @@
 ﻿using System;
 using Amazon.DynamoDBv2.DataModel;
 
-namespace RoomCheckerApi.Models
+namespace RoomChecker.Models
 {
     [DynamoDBTable("BaseMaterials")]
     public class BaseMaterials

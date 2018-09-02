@@ -12970,9 +12970,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mertdemirok/Projects/RoomCheckerWebApi/RoomChecker/RoomChecker/RoomCheckerApi.csproj",
-      "projectName": "RoomCheckerApi",
-      "projectPath": "/Users/mertdemirok/Projects/RoomCheckerWebApi/RoomChecker/RoomChecker/RoomCheckerApi.csproj",
+      "projectUniqueName": "/Users/mertdemirok/Projects/RoomCheckerWebApi/RoomChecker/RoomChecker/RoomChecker.csproj",
+      "projectName": "RoomChecker",
+      "projectPath": "/Users/mertdemirok/Projects/RoomCheckerWebApi/RoomChecker/RoomChecker/RoomChecker.csproj",
       "packagesPath": "/Users/mertdemirok/.nuget/packages/",
       "outputPath": "/Users/mertdemirok/Projects/RoomCheckerWebApi/RoomChecker/RoomChecker/obj",
       "projectStyle": "PackageReference",

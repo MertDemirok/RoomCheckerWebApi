@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomCheckerApi", "RoomChecker\RoomCheckerApi.csproj", "{1A1BA386-26BB-438D-81A2-8F1B2250935B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomChecker", "RoomChecker\RoomChecker.csproj", "{1A1BA386-26BB-438D-81A2-8F1B2250935B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoDb.Libs", "DynamoDb.Libs\DynamoDb.Libs.csproj", "{E4BCABFC-1902-4E95-A7CD-B6A253A2EAE6}"
 EndProject

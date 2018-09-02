@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 namespace RoomCheckerApi.Controllers
 {
     public class UserAutoController
@@ -7,4 +7,4 @@ namespace RoomCheckerApi.Controllers
         {
         }
     }
-}
+}*/
