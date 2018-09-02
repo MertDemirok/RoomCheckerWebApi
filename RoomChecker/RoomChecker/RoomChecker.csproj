@@ -30,4 +30,10 @@
   <ItemGroup>
     <Compile Remove="Controllers\DynamoDbController.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="hosting.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="hosting.json" />
+  </ItemGroup>
 </Project>
